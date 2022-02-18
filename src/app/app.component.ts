@@ -12,7 +12,6 @@ export class AppComponent implements OnInit {
   colorStr: string = new Color().toString();
 
   ngOnInit() {
-    console.log();
   }
 
 }
