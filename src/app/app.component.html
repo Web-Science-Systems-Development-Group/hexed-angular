@@ -1,10 +1,12 @@
 <div class="container">
-    <app-name #nameForm></app-name>
-    <app-score #score></app-score>
-    <app-timer #timer></app-timer>
+    <app-name #nameForm (name)="updateName($event)" (time)="updateTime($event)"></app-name>
+    <app-score #score ></app-score>
+    <app-timer #timer [seconds]="seconds"></app-timer>
     <app-color #color [colorStr]="colorStr"></app-color>
     <app-slider #red color="red"></app-slider>
     <app-slider #green color="green"></app-slider>
     <app-slider #blue color="blue"></app-slider>
+    <button type="submit" class="btn btn-primary mt-4 w-50 mx-4">Reset</button>
+    <button type="submit" class="btn btn-primary mt-4 w-50 mx-4">Submit guess</button>
 </div>
 <router-outlet></router-outlet>

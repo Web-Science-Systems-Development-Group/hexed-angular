@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import Color from '../classes/Color.class';
 
 @Component({
@@ -9,9 +9,22 @@ import Color from '../classes/Color.class';
 export class AppComponent implements OnInit {
   title = 'app';
 
+
+  @ViewChild('timer', {static: true}) timer?: ElementRef;
   colorStr: string = new Color().toString();
+  seconds: number = 60;
+  
 
   ngOnInit() {
+    if(this.timer != undefined) {
+      (this.timer as any).start();
+    }
   }
 
+  updateName(name: string) {
+    console.log(name);
+  }
+  updateTime(time: number) {
+    this.seconds = time;
+  }
 }

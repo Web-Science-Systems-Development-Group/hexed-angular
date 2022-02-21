@@ -9,7 +9,6 @@ import Color from '../../classes/Color.class';
 export class ColorComponent implements OnInit {
 
   @Input() colorStr: string = new Color().toString();
-  @ViewChild('currentColor', { static: true }) currentColorElem?: ElementRef;
 
   constructor() { }
 

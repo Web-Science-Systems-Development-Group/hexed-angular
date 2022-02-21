@@ -9,7 +9,7 @@ import { TimerComponent } from './timer/timer.component';
 import { NameComponent } from './name/name.component';
 import { ScoreComponent } from './score/score.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { FormsModule } from '@angular/forms'
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +22,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

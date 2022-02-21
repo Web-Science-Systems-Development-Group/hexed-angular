@@ -1,2 +1,2 @@
 <label for="color" class="form-label small text-black">{{color}} value</label>
-<input type="range" class="form-range" name="color">
+<input #input type="range" class="form-range" min="0" max="255" value="130" name="color" (change)="output()">

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-name',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NameComponent implements OnInit {
 
+  @ViewChild('name', {static: true}) nameElem?: ElementRef;
+  @ViewChild('time', {static: true}) timeElem?: ElementRef;
+  @Output('name') nameOutput = new EventEmitter<string>();
+  @Output('time') timeOutput = new EventEmitter<number>();
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onSubmit(){
+    if(!this.nameElem || !this.timeElem) {
+      return;
+    }
+    this.nameOutput.emit(this.nameElem.nativeElement.value);
+    this.timeOutput.emit(this.timeElem.nativeElement.value);
+    // console.log(this.nameElem.nativeElement.value)
+    // console.log(this.timeElem.nativeElement.value)
+  }
 }
