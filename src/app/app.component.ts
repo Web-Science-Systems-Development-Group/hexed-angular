@@ -8,6 +8,7 @@ import Color from '../classes/Color.class';
 })
 export class AppComponent implements OnInit {
   title = 'app';
+  hidden = false;
 
 
   @ViewChild('timer', {static: true}) timer?: ElementRef;

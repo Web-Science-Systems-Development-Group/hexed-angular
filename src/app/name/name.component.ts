@@ -19,6 +19,7 @@ export class NameComponent implements OnInit {
   }
 
   onSubmit(){
+    // hidden = true;
     if(!this.nameElem || !this.timeElem) {
       return;
     }
