@@ -35,13 +35,13 @@ class Color {
     *   floor(seconds_remaining) * 
     *   (1000 * (101 - seconds_selected))
      */
-    getScore(guess: Color, secondsRemaining: number, totalSeconds: number): number {
-      return (255 - Math.abs(this.r - guess.r)) +
-            (255 - Math.abs(this.g - guess.g)) +
-            (255 - Math.abs(this.b - guess.b)) *
-            Math.floor(secondsRemaining) *
-            (1000 * (101 - totalSeconds));
-    }
+     getScore(guess: Color, secondsRemaining: number, totalSeconds: number): number {
+        return (255 - Math.abs(this.r - guess.r)) +
+              (255 - Math.abs(this.g - guess.g)) +
+              (255 - Math.abs(this.b - guess.b)) *
+              Math.floor(secondsRemaining) *
+              (1000 * (101 - totalSeconds));
+      }
 
     /**
      * Get this Color as a hexadecimal color code.
