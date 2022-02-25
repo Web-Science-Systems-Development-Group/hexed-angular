@@ -9,7 +9,8 @@ import { TimerComponent } from './timer/timer.component';
 import { NameComponent } from './name/name.component';
 import { ScoreComponent } from './score/score.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { ScoreboardComponent } from './scoreboard/scoreboard.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms'
     ColorComponent,
     TimerComponent,
     NameComponent,
-    ScoreComponent
+    ScoreComponent,
+    ScoreboardComponent
   ],
   imports: [
     BrowserModule,
