@@ -8,6 +8,7 @@ import Color from '../../classes/Color.class';
 })
 export class ScoreComponent implements OnInit {
 
+
   scoreNum: number = 0;
 
   constructor() { }

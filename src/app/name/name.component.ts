@@ -28,4 +28,11 @@ export class NameComponent implements OnInit {
     // console.log(this.nameElem.nativeElement.value)
     // console.log(this.timeElem.nativeElement.value)
   }
+
+  getTime(): number{
+    return this.timeElem?.nativeElement.value;
+  }
+  getName(): string{
+    return this.nameElem?.nativeElement.value
+  }
 }
