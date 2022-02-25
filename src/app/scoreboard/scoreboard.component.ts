@@ -16,7 +16,8 @@ export class ScoreboardComponent implements OnInit {
     let x: [string, number];
     x = [PersonName, score];
     this.leaderboard.push(x);
-    this.leaderboard.sort;
+    this.leaderboard.sort(((a, b) => b[1] - a[1]));
+
     console.log(this.leaderboard);
   }
 
