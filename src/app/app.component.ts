@@ -28,7 +28,14 @@ export class AppComponent implements OnInit {
       }
     }, 0);
   }
+
   updateTime(time: number) {
     this.seconds = time;
+  }
+
+  resetColor(){
+    this.seconds = 60;
+    this.colorStr = new Color().toString();
+    (this.timer as any).start();
   }
 }
