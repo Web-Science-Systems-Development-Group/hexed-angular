@@ -8,12 +8,15 @@ import Color from '../../classes/Color.class';
 })
 export class ScoreComponent implements OnInit {
 
-  // @Input() scoreNum: int = new Color().getScore();
-  score = 85;
+
+  scoreNum: number = 0;
+
+ main
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
 
+  calcScore(submit: Color, timeRemaining: number, totalTime: number){
+    this.scoreNum = submit.getScore(submit, timeRemaining, totalTime);
   }
-
 }
