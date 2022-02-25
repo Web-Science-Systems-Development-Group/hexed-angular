@@ -1,8 +1,15 @@
-<form>
-    <label for="name">Player Name</label>
-    <input #name type="text" class="form-control" name= "name" required>
-    <label for="time">Game Length (1 second to 100 seconds)</label>
-    <input #time type="text" class="form-control" name="time" placeholder="60">
-
-    <button type="submit" class="btn btn-primary mt-4 w-50" (click)="onSubmit()">Start!</button>
+<form> 
+    <div class="form-group row">
+        <div class="col-xs-4">
+            <label for="name">Player Name</label>
+            <input #name type="text" class="form-control" name= "name" required>
+        </div>
+        <div class="col-xs-4">
+            <label for="time">Game Length (1 second to 100 seconds)</label>
+            <input #time type="text" class="form-control" name="time" placeholder="60">
+        </div>
+            <div class="col text-center">
+                <button type="submit" class="btn btn-primary mt-4 w-50" (click)="onSubmit()">Start!</button>
+            </div>
+    </div>
 </form>
