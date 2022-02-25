@@ -5,13 +5,16 @@
             <app-score #score ></app-score>
             <app-timer #timer [seconds]="seconds"></app-timer>
             <app-color #color [colorStr]="colorStr"></app-color>
-            <app-slider #red color="red"></app-slider>
-            <app-slider #green color="green"></app-slider>
-            <app-slider #blue color="blue"></app-slider>
-            <div class="col text-center">
-                <button type="submit" class="btn btn-primary mt-4 w-50 mx-4" (click)="resetColor()">Reset</button>
-                <button type="submit" class="btn btn-primary mt-4 w-50 mx-4" (click)="submitGuess()">Submit Guess</button>
-            </div>
+            <form>
+                <app-slider #red color="red"></app-slider>
+                <app-slider #green color="green"></app-slider>
+                <app-slider #blue color="blue"></app-slider>
+                <div class="col text-center">
+                    <button type="submit" class="btn btn-primary mt-4 w-50 mx-4" (click)="resetColor()">Reset</button>
+                    <button type="submit" class="btn btn-primary mt-4 w-50 mx-4" (click)="submitGuess()">Submit Guess</button>
+                </div>
+            </form>
+            
         </div>
     </div>
     <div class="row">

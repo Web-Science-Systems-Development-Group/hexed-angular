@@ -20,5 +20,7 @@ export class SliderComponent implements OnInit {
     console.log((this.input as any).nativeElement.value);
   }
 
-
+  getValue(): number{
+    return (this.input as any).nativeElement.value;
+  }
 }
