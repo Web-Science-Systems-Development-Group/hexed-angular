@@ -9,7 +9,7 @@ import Color from '../../classes/Color.class';
 export class ScoreComponent implements OnInit {
 
   // @Input() scoreNum: int = new Color().getScore();
-
+  score = 85;
   constructor() { }
 
   ngOnInit(): void {
