@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   @ViewChild('timer') timer?: ElementRef;
   colorStr: string = new Color().toString();
   seconds: number = 60;
+  totalTime: number = 60;
   
 
   ngOnInit() {
@@ -24,6 +25,7 @@ export class AppComponent implements OnInit {
     // Trick to push event to end of event loop, allowing Angular to rerender the DOM.
     setTimeout(() => {
       if(this.timer != undefined) {
+        this.totalTime = this.seconds;
         (this.timer as any).start();
       }
     }, 0);
@@ -34,8 +36,18 @@ export class AppComponent implements OnInit {
   }
 
   resetColor(){
-    this.seconds = 60;
+    (this.timer as any).stop();
+    this.seconds = this.totalTime;
+    (this.timer as any).secondsRemaining = this.totalTime;
     this.colorStr = new Color().toString();
     (this.timer as any).start();
   }
+
+  submitGuess(){
+    (this.timer as any).stop();
+    
+    //(document.getElementById('red') as any).nativeElement.value;
+    //console.log(r);
+  }
+
 }
