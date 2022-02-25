@@ -11,7 +11,6 @@ export class ScoreComponent implements OnInit {
 
   scoreNum: number = 0;
 
- main
   constructor() { }
 
   ngOnInit(): void {}
