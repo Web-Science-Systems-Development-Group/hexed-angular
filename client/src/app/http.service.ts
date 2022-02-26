@@ -6,11 +6,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HttpService {
 
-  private apiserver = "http://localhost:3000/api";
-
   constructor(private httpClient: HttpClient) { }
 
-  public sendGetRequest() {
-    return this.httpClient.get(this.apiserver);
+  public getScores() {
+    return this.httpClient.get("http://localhost:3000/api/getscores");
+  }
+
+  public sendScore(name: string, score: number) {
+    return this.httpClient.get("http://localhost:3000/api/sendscore?name=" + name + "&score=" + score);
   }
 }

@@ -11,7 +11,6 @@ import { ScoreComponent } from './score/score.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { ScoreboardComponent } from './scoreboard/scoreboard.component';
-import { AjaxComponent } from './ajax/ajax.component';
 import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
@@ -21,8 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     TimerComponent,
     NameComponent,
     ScoreComponent,
-    ScoreboardComponent,
-    AjaxComponent
+    ScoreboardComponent
   ],
   imports: [
     BrowserModule,
