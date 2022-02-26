@@ -25,14 +25,12 @@ export class ScoreboardComponent implements OnInit {
     this.leaderboard.sort(((a, b) => b[1] - a[1]));
     this.leaderboard = this.leaderboard.slice(0, 10);
 
-    // TODO if score > position 10, send score to remote server
     this.httpService.sendScore(PersonName, score).subscribe((data) => {
       console.log(data);
     })
   }
 
   ngOnInit(): void {
-    // TODO get scores from remote server
     this.httpService.getScores().subscribe((data: any) => {
       for(const prop in data.scores) {
         if(!data.scores.hasOwnProperty(prop)) {
