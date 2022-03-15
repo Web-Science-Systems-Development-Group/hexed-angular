@@ -3,7 +3,7 @@ const express = require('express');
 const fetch = require('node-fetch');
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
-const uri = "mongodb+srv://itws:" + process.env.DBPASS + "@itws4500.t01pa.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const uri = process.env.MONGOURL;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
 const app = express();
