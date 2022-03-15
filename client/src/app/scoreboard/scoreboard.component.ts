@@ -8,22 +8,22 @@ import { HttpService } from '../http.service';
 })
 export class ScoreboardComponent implements OnInit {
 
-  leaderboard: [string, number][] = [];
+  leaderboard: {name: string, score: number}[] = [];
 
 
   constructor(private httpService: HttpService) { }
 
   update(PersonName: string, score: number){
     // Don't add score if it's less than all values on the leaderboard.
-    if(score <= this.leaderboard[this.leaderboard.length - 1][1]) {
+    if(this.leaderboard.length >= 10 && score <= this.leaderboard[this.leaderboard.length - 1].score) {
       return;
     }
 
-    let x: [string, number];
-    x = [PersonName, score];
+    let x: {name: string, score: number};
+    x = {name: PersonName, score: score};
     this.leaderboard.push(x);
-    this.leaderboard.sort(((a, b) => b[1] - a[1]));
-    this.leaderboard = this.leaderboard.slice(0, 10);
+    this.leaderboard.sort(((a, b) => b.score - a.score));
+    this.leaderboard = this.leaderboard.slice(0, Math.min(10, this.leaderboard.length));
 
     this.httpService.sendScore(PersonName, score).subscribe((data) => {
       console.log(data);
@@ -32,13 +32,14 @@ export class ScoreboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.httpService.getScores().subscribe((data: any) => {
-      for(const prop in data.scores) {
-        if(!data.scores.hasOwnProperty(prop)) {
-          continue;
-        }
-        this.leaderboard.push([prop, data.scores[prop]])
+      for(const score of data) {
+        this.leaderboard.push({
+          name: score.name,
+          score: score.score
+        })
       }
-      this.leaderboard.sort(((a, b) => b[1] - a[1]));
+      this.leaderboard.sort(((a, b) => b.score - a.score));
+      console.log(this.leaderboard);
     })
   }
 

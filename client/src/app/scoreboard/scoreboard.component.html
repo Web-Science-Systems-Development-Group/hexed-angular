@@ -9,8 +9,8 @@
 
   <div class="row" *ngFor="let leaderboard of leaderboard; let i = index">
       <div class="col">{{i + 1}}</div>
-      <div class="col">{{leaderboard[0]}}</div>
-      <div class="col">{{leaderboard[1]}}</div>
+      <div class="col">{{leaderboard.name}}</div>
+      <div class="col">{{leaderboard.score}}</div>
   </div>
   <!--Use TypeScript to show the rest?-->
 </div>
